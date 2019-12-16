@@ -1,0 +1,51 @@
+<div class="mat-elevation-z8" id="tab">
+  <table mat-table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID</th>
+      <td mat-cell *matCellDef="let ani">{{ani.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef> Nom</th>
+      <td mat-cell *matCellDef="let ani">{{ani.nom}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="types">
+      <th mat-header-cell *matHeaderCellDef> Type</th>
+      <td mat-cell *matCellDef="let ani">{{ani.types}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="adopte">
+      <th mat-header-cell *matHeaderCellDef> Adopté ?</th>
+      <td mat-cell *matCellDef="let ani">{{ani.adopte ? 'oui' : 'non'}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action</th>
+      <td mat-cell *matCellDef="let ani">
+
+        <a mat-flat-button routerLink=".">Modifier</a>
+        <button mat-flat-button color="warn" (click)="SupprimerAnimaux(ani.id)"> X</button>
+
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedcolumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedcolumns;"></tr>
+
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+</div>
+
+
+
+
+
+
+
+
+
+
+
