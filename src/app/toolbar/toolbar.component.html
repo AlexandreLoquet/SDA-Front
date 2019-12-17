@@ -1,36 +1,35 @@
-
 <mat-toolbar color="primary" id="toolbar">
 
 
-  <button mat-icon-button [matMenuTriggerFor]="menu">
+  <button [matMenuTriggerFor]="menu" mat-icon-button>
     <mat-icon>more_vert</mat-icon>
   </button>
 
   <mat-menu #menu="matMenu">
 
     <button mat-menu-item>
-      <span>Mon Profil</span>
+      <span><mat-icon>person</mat-icon>Mon Profil</span>
     </button>
     <button mat-menu-item>
-      <span>À propos</span>
+      <span><mat-icon>notes</mat-icon>À propos</span>
     </button>
 
-    <button mat-menu-item >
-      <span>Déconnexion</span>
+    <button mat-menu-item>
+      <span><mat-icon>power_settings_new</mat-icon>Déconnexion</span>
     </button>
 
   </mat-menu>
 
 
   <a routerLink="/animaux" routerLinkActive="active">
-      <span>Voir les animaux</span>
-    </a>
+    <span><mat-icon>format_list_bulleted</mat-icon>Liste Animaux</span>
+  </a>
 
-    <a routerLink="/recueillir" routerLinkActive="active">
-      <span>Recueillir un animal</span>
-    </a>
+  <a routerLink="/recueillir" routerLinkActive="active">
+    <span><mat-icon>add</mat-icon>Recueillir un animal</span>
+  </a>
 
-    <a routerLink="/adoption" routerLinkActive="active">
-      <span>Procéder à une adoption</span>
-    </a>
+  <a routerLink="/adoption" routerLinkActive="active">
+    <span><mat-icon>near_me</mat-icon>Procéder à une adoption</span>
+  </a>
 </mat-toolbar>

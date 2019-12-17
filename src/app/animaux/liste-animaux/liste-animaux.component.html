@@ -1,38 +1,40 @@
 <div class="mat-elevation-z8" id="tab">
-  <table mat-table [dataSource]="dataSource">
+  <table [dataSource]="dataSource" mat-table>
 
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> ID</th>
-      <td mat-cell *matCellDef="let ani">{{ani.id}}</td>
+      <th *matHeaderCellDef mat-header-cell> ID</th>
+      <td *matCellDef="let ani" mat-cell>{{ani.id}}</td>
     </ng-container>
 
     <ng-container matColumnDef="nom">
-      <th mat-header-cell *matHeaderCellDef> Nom</th>
-      <td mat-cell *matCellDef="let ani">{{ani.nom}}</td>
+      <th *matHeaderCellDef mat-header-cell> Nom</th>
+      <td *matCellDef="let ani" mat-cell>{{ani.nom}}</td>
     </ng-container>
 
     <ng-container matColumnDef="types">
-      <th mat-header-cell *matHeaderCellDef> Type</th>
-      <td mat-cell *matCellDef="let ani">{{ani.types}}</td>
+      <th *matHeaderCellDef mat-header-cell> Type</th>
+      <td *matCellDef="let ani" mat-cell>{{ani.types}}</td>
     </ng-container>
 
     <ng-container matColumnDef="adopte">
-      <th mat-header-cell *matHeaderCellDef> Adopté ?</th>
-      <td mat-cell *matCellDef="let ani">{{ani.adopte ? 'oui' : 'non'}}</td>
+      <th *matHeaderCellDef mat-header-cell> Adopté ?</th>
+      <td *matCellDef="let ani" mat-cell>{{ani.adopte ? 'oui' : 'non'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef> Action</th>
-      <td mat-cell *matCellDef="let ani">
+      <th *matHeaderCellDef mat-header-cell> Action</th>
+      <td *matCellDef="let ani" mat-cell>
 
-        <a mat-flat-button routerLink=".">Modifier</a>
-        <button mat-flat-button color="warn" (click)="SupprimerAnimaux(ani.id)"> X</button>
+        <a mat-flat-button routerLink="."><mat-icon title="Modifier">edit</mat-icon></a>
+        <button (click)="SupprimerAnimaux(ani.id)" mat-flat-button>
+          <mat-icon title="Supprimer">delete</mat-icon>
+        </button>
 
       </td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedcolumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedcolumns;"></tr>
+    <tr *matHeaderRowDef="displayedcolumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedcolumns;" mat-row></tr>
 
   </table>
 
