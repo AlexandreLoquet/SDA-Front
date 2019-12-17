@@ -29,6 +29,10 @@ export class ListeAnimauxComponent implements OnInit {
 
   }
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
 
   SupprimerAnimaux(id: number) {
     this.animauxService.deleteAnimaux(id).subscribe( () => {

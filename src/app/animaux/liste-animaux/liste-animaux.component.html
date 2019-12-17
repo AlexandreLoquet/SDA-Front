@@ -1,4 +1,7 @@
 <div class="mat-elevation-z8" id="tab">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
   <table [dataSource]="dataSource" mat-table>
 
     <ng-container matColumnDef="id">
@@ -38,7 +41,7 @@
 
   </table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[10, 15, 25]" showFirstLastButtons></mat-paginator>
 </div>
 
 
