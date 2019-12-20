@@ -19,6 +19,11 @@
       <td *matCellDef="let ani" mat-cell>{{ani.types}}</td>
     </ng-container>
 
+    <ng-container matColumnDef="sda">
+      <th *matHeaderCellDef mat-header-cell> Sda</th>
+      <td *matCellDef="let ani" mat-cell>{{ani.sda.nom}}</td>
+    </ng-container>
+
     <ng-container matColumnDef="adopte">
       <th *matHeaderCellDef mat-header-cell> Adopté ?</th>
       <td *matCellDef="let ani" mat-cell>{{ani.adopte ? 'oui' : 'non'}}</td>

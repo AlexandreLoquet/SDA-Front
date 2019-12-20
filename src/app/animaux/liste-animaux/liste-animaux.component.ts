@@ -13,7 +13,7 @@ import {MatPaginator, MatTableDataSource} from '@angular/material';
 
 export class ListeAnimauxComponent implements OnInit {
 
-  displayedcolumns = ['id', 'nom', 'types', 'adopte', 'action'];
+  displayedcolumns = ['id', 'nom', 'types', 'sda', 'adopte', 'action'];
   dataSource: MatTableDataSource<Animaux>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;

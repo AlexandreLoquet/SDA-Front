@@ -22,7 +22,7 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import {ToolbarComponent} from './toolbar/toolbar.component';
-import {CdkTableModule} from '@angular/cdk/table';
+
 
 
 
@@ -34,7 +34,7 @@ import {CdkTableModule} from '@angular/cdk/table';
     ListeAnimauxComponent,
     AjouterAnimauxComponent,
     DonnerAnimauxComponent,
-    ToolbarComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
