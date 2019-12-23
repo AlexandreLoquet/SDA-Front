@@ -1,5 +1,6 @@
 <div class="container">
   <form (ngSubmit)="onSubmit()">
+
     <div class="row">
       <div class="center">
         <mat-form-field class="nom">
@@ -7,6 +8,7 @@
         </mat-form-field>
       </div>
     </div>
+
     <div class="row">
       <div class="center">
         <mat-radio-group [(ngModel)]="ani.types" name="types">
@@ -15,6 +17,17 @@
         </mat-radio-group>
       </div>
     </div>
+
+    <!--<div class="row">
+      <div class="center">
+        <mat-label>Refuge :</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let sda" [value]="sda.value">
+            {{sda.nom}}
+          </mat-option>
+        </mat-select>
+      </div>
+    </div>-->
     <div class="row">
       <div class="center">
         <button color="primary" mat-raised-button type="submit">Ajouter</button>

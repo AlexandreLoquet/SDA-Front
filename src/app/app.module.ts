@@ -13,10 +13,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   _MatMenuDirectivesModule,
   MatButtonModule,
-  MatFormFieldModule,
+  MatFormFieldModule, MatIcon,
   MatIconModule,
   MatInputModule,
-  MatMenuModule, MatPaginatorModule, MatRadioModule,
+  MatMenuModule, MatPaginatorModule, MatRadioModule, MatSelectModule,
   MatSliderModule,
   MatTableModule,
   MatToolbarModule
@@ -52,7 +52,8 @@ import {ToolbarComponent} from './toolbar/toolbar.component';
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule
   ],
   providers: [AnimauxService],
   bootstrap: [AppComponent]

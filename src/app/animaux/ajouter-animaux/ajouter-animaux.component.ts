@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Animaux} from '../animaux';
 import {AnimauxService} from '../../service/animaux.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {SdaService} from '../../service/sda.service';
 
 @Component({
   selector: 'app-ajouter-animaux',
@@ -12,9 +13,13 @@ export class AjouterAnimauxComponent {
 
   ani: Animaux;
 
-  constructor(private route: ActivatedRoute, private router: Router, private animauxService: AnimauxService) {
+
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private animauxService: AnimauxService) {
     this.ani = new Animaux();
   }
+
 
   onSubmit() {
     this.animauxService.save(this.ani).subscribe(result => this.gotoAnimauxList());

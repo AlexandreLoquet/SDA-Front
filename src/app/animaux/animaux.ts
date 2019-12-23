@@ -5,6 +5,6 @@ export class Animaux {
   nom: string;
   types: string[] = ['Chat', 'Chien'];
   isAdopte: boolean;
-  dateAdopte: Date;
+  dateAdoption: Date;
   sda: Sda;
 }

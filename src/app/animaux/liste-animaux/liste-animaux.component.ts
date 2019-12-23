@@ -13,7 +13,7 @@ import {MatPaginator, MatTableDataSource} from '@angular/material';
 
 export class ListeAnimauxComponent implements OnInit {
 
-  displayedcolumns = ['id', 'nom', 'types', 'sda', 'adopte', 'action' ];
+  displayedcolumns = ['id', 'nom', 'types', 'sda', 'adopte', 'action'];
   dataSource: MatTableDataSource<Animaux>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -23,9 +23,10 @@ export class ListeAnimauxComponent implements OnInit {
 
   ngOnInit() {
     this.animauxService.findAll().subscribe(data => {
-    this.dataSource = new MatTableDataSource<Animaux>(data);
-    this.dataSource.paginator = this.paginator;
-  });
+      this.dataSource = new MatTableDataSource<Animaux>(data);
+      this.dataSource.paginator = this.paginator;
+      console.log(data);
+    });
 
   }
 

@@ -1,6 +1,6 @@
 <div class="mat-elevation-z8" id="tab">
   <mat-form-field>
-    <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Filter">
+    <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Filtre">
   </mat-form-field>
   <table [dataSource]="dataSource" mat-table>
 
@@ -25,9 +25,9 @@
     </ng-container>
 
     <ng-container matColumnDef="adopte">
-      <th *matHeaderCellDef mat-header-cell> Adopté ?</th>
+      <th *matHeaderCellDef mat-header-cell> Adoption</th>
       <td *matCellDef="let ani"
-          mat-cell>{{ani.adopte ? 'oui' : 'non'}} {{ani.dateAdopte ? ' - ' + ani.dateAdopte : null}}</td>
+          mat-cell>{{ani.adopte ? 'oui  -  le ' : 'non'}} {{ani.dateAdoption|date:'dd/MM/yyyy'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="action">
