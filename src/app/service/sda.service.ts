@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Animaux} from '../animaux/animaux';
 import {Sda} from '../sda/sda';
 
 @Injectable()

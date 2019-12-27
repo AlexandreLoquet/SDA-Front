@@ -5,7 +5,8 @@ import {AjouterAnimauxComponent} from './animaux/ajouter-animaux/ajouter-animaux
 import {DonnerAnimauxComponent} from './animaux/donner-animaux/donner-animaux.component';
 
 const routes: Routes = [
-  { path: 'animaux', component: ListeAnimauxComponent},
+  { path: '', component: ListeAnimauxComponent},
+  { path:  'animaux' , component: ListeAnimauxComponent},
   { path: 'recueillir', component: AjouterAnimauxComponent},
   { path: 'adoption', component: DonnerAnimauxComponent}
 ];

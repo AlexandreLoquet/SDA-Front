@@ -22,10 +22,9 @@ export class ListeAnimauxComponent implements OnInit {
 
 
   ngOnInit() {
-    this.animauxService.findAll().subscribe(data => {
-      this.dataSource = new MatTableDataSource<Animaux>(data);
+    this.animauxService.findAll().subscribe(dataAnimaux => {
+      this.dataSource = new MatTableDataSource<Animaux>(dataAnimaux);
       this.dataSource.paginator = this.paginator;
-      console.log(data);
     });
 
   }
