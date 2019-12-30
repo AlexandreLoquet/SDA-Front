@@ -12,7 +12,7 @@ import {Sda} from '../../sda/sda';
 })
 export class AjouterAnimauxComponent implements OnInit {
 
-  ani: Animaux;
+  animaux: Animaux;
   listSda: Sda[];
 
 
@@ -20,11 +20,11 @@ export class AjouterAnimauxComponent implements OnInit {
               private router: Router,
               private animauxService: AnimauxService,
               private sdaService: SdaService) {
-    this.ani = new Animaux();
+    this.animaux = new Animaux();
   }
 
   onSubmit() {
-    this.animauxService.save(this.ani).subscribe(result => this.gotoAnimauxList());
+    this.animauxService.save(this.animaux).subscribe(result => this.gotoAnimauxList());
   }
 
   gotoAnimauxList() {
