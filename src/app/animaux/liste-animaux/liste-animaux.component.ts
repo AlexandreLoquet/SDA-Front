@@ -18,7 +18,8 @@ export class ListeAnimauxComponent implements OnInit {
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor(private animauxService: AnimauxService) { }
+  constructor(private animauxService: AnimauxService) {
+  }
 
 
   ngOnInit() {
@@ -35,11 +36,14 @@ export class ListeAnimauxComponent implements OnInit {
 
 
   SupprimerAnimaux(id: number) {
-    this.animauxService.deleteAnimaux(id).subscribe( () => {
-      const animauxToDelete = this.dataSource.data.find(animaux => animaux.id === id);
-      const index = this.dataSource.data.indexOf(animauxToDelete);
-      this.dataSource.data.splice(index, 1);
-      this.dataSource._updateChangeSubscription();
-    });
+    if (confirm('Etes vous sûr de vouloir supprimer cet animal ? ')) {
+      this.animauxService.deleteAnimaux(id).subscribe(() => {
+        const animauxToDelete = this.dataSource.data.find(animaux => animaux.id === id);
+        const index = this.dataSource.data.indexOf(animauxToDelete);
+        this.dataSource.data.splice(index, 1);
+        this.dataSource._updateChangeSubscription();
+      });
+    }
   }
 }
+
