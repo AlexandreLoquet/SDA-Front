@@ -29,7 +29,7 @@
     <ng-container matColumnDef="adopte">
       <th *matHeaderCellDef mat-header-cell> Adoption</th>
       <td *matCellDef="let ani"
-          mat-cell>{{ani.adopte ? 'oui  -  le ' : 'non'}} {{ani.dateAdoption|date:'dd/MM/yyyy'}}</td>
+          mat-cell>{{ani.adopte ? afficherNomPrenomAdoptant(ani.adoptant)  + ' - le ' : ''}} {{ani.dateAdoption|date:'dd/MM/yyyy'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="action">
@@ -39,7 +39,7 @@
         <a mat-flat-button routerLink=".">
           <mat-icon title="Modifier">edit</mat-icon>
         </a>
-        <button (click)="SupprimerAnimaux(ani.id)" mat-flat-button>
+        <button (click)="supprimerAnimaux(ani.id)" mat-flat-button>
           <mat-icon title="Supprimer">delete</mat-icon>
         </button>
 

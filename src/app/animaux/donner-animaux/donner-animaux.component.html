@@ -1,1 +1,28 @@
 <app-toolbar></app-toolbar>
+
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="row">
+      <div class="center">
+        <mat-form-field>
+          <mat-label>Animaux :</mat-label>
+          <mat-select [(ngModel)]="animaux.nom" name="animaux">
+            <mat-option *ngFor="let animaux of listAnimaux" [value]="animaux">
+              {{animaux.nom}} - {{animaux.types}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="center">
+        <button color="primary" mat-raised-button type="submit">Ajouter</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+

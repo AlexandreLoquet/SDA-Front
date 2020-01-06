@@ -17,6 +17,10 @@ export class AnimauxService {
     return this.http.get<Animaux[]>(this.animauxUrl + '/all');
   }
 
+  public findFreeAnimaux(): Observable<Animaux[]> {
+    return this.http.get<Animaux[]>(this.animauxUrl + '/free');
+  }
+
   public save( animaux: Animaux) {
     return this.http.post<Animaux>(this.animauxUrl + '/new', animaux);
   }

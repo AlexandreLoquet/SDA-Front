@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {AnimauxService} from '../../service/animaux.service';
 import {Animaux} from '../animaux';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
+import {Users} from '../../users/users';
 
 
 @Component({
@@ -35,7 +36,7 @@ export class ListeAnimauxComponent implements OnInit {
   }
 
 
-  SupprimerAnimaux(id: number) {
+  supprimerAnimaux(id: number) {
     if (confirm('Etes vous sûr de vouloir supprimer cet animal ? ')) {
       this.animauxService.deleteAnimaux(id).subscribe(() => {
         const animauxToDelete = this.dataSource.data.find(animaux => animaux.id === id);
@@ -44,6 +45,11 @@ export class ListeAnimauxComponent implements OnInit {
         this.dataSource._updateChangeSubscription();
       });
     }
+  }
+
+  afficherNomPrenomAdoptant(user: Users) {
+    const {nom, prenom} = user;
+    return `${prenom} ${nom}`;
   }
 }
 
