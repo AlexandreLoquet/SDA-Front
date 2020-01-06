@@ -17,7 +17,6 @@ export class DonnerAnimauxComponent implements OnInit {
   }
 
   onSubmit() {
-  this.animauxService.modify(this.animaux);
   }
 
   ngOnInit(): void {

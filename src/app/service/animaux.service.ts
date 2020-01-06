@@ -28,4 +28,5 @@ export class AnimauxService {
   public deleteAnimaux(id: number) {
     return this.http.delete(this.animauxUrl + '/delete/' + id);
   }
+
 }

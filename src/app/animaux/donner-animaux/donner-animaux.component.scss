@@ -1,0 +1,18 @@
+form {
+  color: white;
+  margin: 10vh 0 5vh 0;
+  background-color: #424242;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+  0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+  0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+  padding: 3vh 0 3vh 0;
+}
+
+mat-radio-button {
+  margin: 1em;
+}
+
+.center {
+  margin: auto;
+  float: none;
+}
