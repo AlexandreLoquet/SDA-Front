@@ -29,4 +29,8 @@ export class AnimauxService {
     return this.http.delete(this.animauxUrl + '/delete/' + id);
   }
 
+  public adopt(id: number, a: Animaux) {
+    return this.http.put(this.animauxUrl + '/adopt/' + id, a);
+  }
+
 }

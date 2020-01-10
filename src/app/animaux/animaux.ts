@@ -4,7 +4,7 @@ import {Users} from '../users/users';
 export class Animaux {
   id: number;
   nom: string;
-  types: string[] = ['Chat', 'Chien'];
+  types: string;
   isAdopte: boolean;
   dateAdoption: Date;
   sda: Sda;

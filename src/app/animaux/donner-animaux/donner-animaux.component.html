@@ -7,7 +7,7 @@
       <div class="center">
         <mat-form-field>
           <mat-label>Animaux :</mat-label>
-          <mat-select [(ngModel)]="animaux.nom" name="animaux">
+          <mat-select [(ngModel)]="animaux" name="animaux">
             <mat-option *ngFor="let animaux of listAnimaux" [value]="animaux">
               {{animaux.nom}} - {{animaux.types}}
             </mat-option>
@@ -15,6 +15,20 @@
         </mat-form-field>
       </div>
     </div>
+
+    <div class="row">
+      <div class="center">
+        <mat-form-field>
+          <mat-label>Choisir un adoptant :</mat-label>
+          <mat-select [(ngModel)]="animaux.adoptant" name="users">
+            <mat-option *ngFor="let users of listUsers" [value]="users">
+              {{users.id}} - {{users.nom}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
 
     <div class="row">
       <div class="center">

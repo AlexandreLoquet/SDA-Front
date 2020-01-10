@@ -23,6 +23,7 @@ import {
 } from '@angular/material';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {SdaService} from './service/sda.service';
+import {UsersService} from './service/users.service';
 
 
 
@@ -56,7 +57,7 @@ import {SdaService} from './service/sda.service';
     MatRadioModule,
     MatSelectModule
   ],
-  providers: [AnimauxService, SdaService],
+  providers: [AnimauxService, SdaService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
