@@ -1,12 +1,12 @@
 import {Sda} from '../sda/sda';
 import {Users} from '../users/users';
 
-export class Animaux {
+export class Animals {
   id: number;
-  nom: string;
+  name: string;
   types: string;
-  isAdopte: boolean;
-  dateAdoption: Date;
+  isAdopt: boolean;
+  adoptionDate: Date;
   sda: Sda;
-  adoptant: Users;
+  carer: Users;
 }

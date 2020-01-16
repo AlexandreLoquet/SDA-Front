@@ -6,14 +6,14 @@
     <div class="row">
       <div class="center">
         <mat-form-field class="nom">
-          <input [(ngModel)]="animaux.nom" matInput name="nom" placeholder="Nom" required>
+          <input [(ngModel)]="animals.name" matInput name="nom" placeholder="Nom" required>
         </mat-form-field>
       </div>
     </div>
 
     <div class="row">
       <div class="center">
-        <mat-radio-group [(ngModel)]="animaux.types" name="types">
+        <mat-radio-group [(ngModel)]="animals.types" name="types">
           <mat-radio-button value="Chat">Chat</mat-radio-button>
           <mat-radio-button value="Chien">Chien</mat-radio-button>
         </mat-radio-group>
@@ -24,9 +24,9 @@
       <div class="center">
         <mat-form-field>
           <mat-label>Refuge :</mat-label>
-          <mat-select [(ngModel)]="animaux.sda" name="sda">
-            <mat-option *ngFor="let sda of listSda" [value]="sda">
-              {{sda.id}} - {{sda.nom}}
+          <mat-select [(ngModel)]="animals.sda" name="sda">
+            <mat-option *ngFor="let sda of sdaList" [value]="sda">
+              {{sda.id}} - {{sda.name}}
             </mat-option>
           </mat-select>
         </mat-form-field>

@@ -13,7 +13,7 @@
 
     <ng-container matColumnDef="nom">
       <th *matHeaderCellDef mat-header-cell> Nom</th>
-      <td *matCellDef="let ani" mat-cell>{{ani.nom}}</td>
+      <td *matCellDef="let ani" mat-cell>{{ani.name}}</td>
     </ng-container>
 
     <ng-container matColumnDef="types">
@@ -23,23 +23,23 @@
 
     <ng-container matColumnDef="sda">
       <th *matHeaderCellDef mat-header-cell> Sda</th>
-      <td *matCellDef="let ani" mat-cell>{{ani.sda.nom}}</td>
+      <td *matCellDef="let ani" mat-cell>{{ani.sda.name}}</td>
     </ng-container>
 
     <ng-container matColumnDef="adopte">
       <th *matHeaderCellDef mat-header-cell> Adoption</th>
       <td *matCellDef="let ani"
-          mat-cell>{{ani.adopte ? afficherNomPrenomAdoptant(ani.adoptant)  + ' - le ' : ''}} {{ani.dateAdoption|date:'dd/MM/yyyy'}}</td>
+          mat-cell>{{ani.adopt ? displayNameOfCarer(ani.carer) + ' - le ' : ''}} {{ani.adoptionDate|date:'dd/MM/yyyy'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="action">
       <th *matHeaderCellDef mat-header-cell> Action</th>
       <td *matCellDef="let ani" mat-cell>
 
-        <a mat-flat-button routerLink=".">
+        <a mat-flat-button routerLink="/modify" routerLinkActive="active">
           <mat-icon title="Modifier">edit</mat-icon>
         </a>
-        <button (click)="supprimerAnimaux(ani.id)" mat-flat-button>
+        <button (click)="deleteAnimals(ani.id)" mat-flat-button>
           <mat-icon title="Supprimer">delete</mat-icon>
         </button>
 

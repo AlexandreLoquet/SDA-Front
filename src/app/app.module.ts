@@ -3,17 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListeAnimauxComponent } from './animaux/liste-animaux/liste-animaux.component';
-import { AjouterAnimauxComponent } from './animaux/ajouter-animaux/ajouter-animaux.component';
-import { DonnerAnimauxComponent } from './animaux/donner-animaux/donner-animaux.component';
-import {AnimauxService} from './service/animaux.service';
+import { AnimalsListComponent } from './animals/animalsList/animals-list.component';
+import { AddAnimalsComponent } from './animals/addAnimal/add-animals.component';
+import { GiveAnimalComponent } from './animals/giveAnimal/give-animal.component';
+import {ModifyAnimalComponent} from './animals/modifyAnimal/modify-animal.component';
+import {AnimalsService} from './services/animals.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   _MatMenuDirectivesModule,
   MatButtonModule,
-  MatFormFieldModule, MatIcon,
+  MatFormFieldModule,
   MatIconModule,
   MatInputModule,
   MatMenuModule, MatPaginatorModule, MatRadioModule, MatSelectModule,
@@ -22,21 +23,19 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import {ToolbarComponent} from './toolbar/toolbar.component';
-import {SdaService} from './service/sda.service';
-import {UsersService} from './service/users.service';
-
-
-
+import {SdaService} from './services/sda.service';
+import {UsersService} from './services/users.service';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListeAnimauxComponent,
-    AjouterAnimauxComponent,
-    DonnerAnimauxComponent,
-    ToolbarComponent
+    AnimalsListComponent,
+    AddAnimalsComponent,
+    GiveAnimalComponent,
+    ToolbarComponent,
+    ModifyAnimalComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +56,7 @@ import {UsersService} from './service/users.service';
     MatRadioModule,
     MatSelectModule
   ],
-  providers: [AnimauxService, SdaService, UsersService],
+  providers: [AnimalsService, SdaService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

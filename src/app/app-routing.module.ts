@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {ListeAnimauxComponent} from './animaux/liste-animaux/liste-animaux.component';
-import {AjouterAnimauxComponent} from './animaux/ajouter-animaux/ajouter-animaux.component';
-import {DonnerAnimauxComponent} from './animaux/donner-animaux/donner-animaux.component';
+import {AnimalsListComponent} from './animals/animalsList/animals-list.component';
+import {AddAnimalsComponent} from './animals/addAnimal/add-animals.component';
+import {GiveAnimalComponent} from './animals/giveAnimal/give-animal.component';
+import {ModifyAnimalComponent} from './animals/modifyAnimal/modify-animal.component';
 
 const routes: Routes = [
-  { path: '', component: ListeAnimauxComponent},
-  { path:  'animaux' , component: ListeAnimauxComponent},
-  { path: 'recueillir', component: AjouterAnimauxComponent},
-  { path: 'adoption', component: DonnerAnimauxComponent}
+  { path: '', component: AnimalsListComponent},
+  { path: 'animals' , component: AnimalsListComponent},
+  { path: 'host', component: AddAnimalsComponent},
+  { path: 'adoption', component: GiveAnimalComponent},
+  { path: 'modify', component: ModifyAnimalComponent}
 ];
 
 @NgModule({
