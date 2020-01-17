@@ -14,8 +14,7 @@
     <div class="row">
       <div class="center">
         <mat-radio-group [(ngModel)]="animals.types" name="types">
-          <mat-radio-button value="Chat">Chat</mat-radio-button>
-          <mat-radio-button value="Chien">Chien</mat-radio-button>
+          <mat-radio-button *ngFor="let animaltype of typesList" [value]="animaltype">{{animaltype}}</mat-radio-button>
         </mat-radio-group>
       </div>
     </div>

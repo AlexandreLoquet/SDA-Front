@@ -14,17 +14,18 @@ export class AddAnimalsComponent implements OnInit {
 
   animals: Animals;
   sdaList: Sda[];
+  typesList: string[];
 
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private animauxService: AnimalsService,
+              private animalService: AnimalsService,
               private sdaService: SdaService) {
     this.animals = new Animals();
   }
 
   onSubmit() {
-    this.animauxService.save(this.animals).subscribe(result => this.gotoAnimalsList());
+    this.animalService.save(this.animals).subscribe(result => this.gotoAnimalsList());
   }
 
   gotoAnimalsList() {
@@ -34,6 +35,9 @@ export class AddAnimalsComponent implements OnInit {
   ngOnInit(): void {
     this.sdaService.findAll().subscribe(dataSDA => {
       this.sdaList = dataSDA;
+    });
+    this.animalService.findTypesOfAnimals().subscribe(dataTypes => {
+      this.typesList = dataTypes;
     });
   }
 }

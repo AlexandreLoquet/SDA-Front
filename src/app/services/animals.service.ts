@@ -21,6 +21,10 @@ export class AnimalsService {
     return this.http.get<Animals[]>(this.animalsUrl + '/free');
   }
 
+  public findTypesOfAnimals(): Observable<string[]> {
+    return this.http.get<string[]>(this.animalsUrl + '/types');
+  }
+
   public save( animals: Animals) {
     return this.http.post<Animals>(this.animalsUrl + '/new', animals);
   }
