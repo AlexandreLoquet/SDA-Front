@@ -28,8 +28,9 @@
 
     <ng-container matColumnDef="adopte">
       <th *matHeaderCellDef mat-header-cell> Adoption</th>
-      <td *matCellDef="let ani"
-          mat-cell>{{ani.adopt ? displayNameOfCarer(ani.carer) + ' - le ' : ''}} {{ani.adoptionDate|date:'dd/MM/yyyy'}}</td>
+      <td *matCellDef="let ani" mat-cell [matTooltip]="openUserDetails(ani.carer)">
+        {{ani.adopt ? displayNameOfCarer(ani.carer) + ' - le ' : ''}}
+        {{ani.adoptionDate|date:'dd/MM/yyyy'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="action">

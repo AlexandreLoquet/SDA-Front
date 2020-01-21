@@ -1,8 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {AnimalsService} from '../../services/animals.service';
 import {Animals} from '../animals';
-import {MatPaginator, MatTableDataSource} from '@angular/material';
+import {MatDialog, MatPaginator, MatTableDataSource} from '@angular/material';
 import {Users} from '../../users/users';
+import {UsersService} from '../../services/users.service';
 
 
 @Component({
@@ -19,8 +20,8 @@ export class AnimalsListComponent implements OnInit {
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor(private animauxService: AnimalsService) {
-  }
+  constructor(private animauxService: AnimalsService,
+              private  userService: UsersService) {}
 
 
   ngOnInit() {
@@ -47,9 +48,18 @@ export class AnimalsListComponent implements OnInit {
     }
   }
 
+
+
   displayNameOfCarer(user: Users) {
     const {lastname, firstname} = user;
     return `${firstname} ${lastname}`;
   }
+
+  openUserDetails(user: Users) {
+    if (user) {
+      return ` Adoptant : ${this.displayNameOfCarer(user)}`;
+    }
+    }
+
 }
 

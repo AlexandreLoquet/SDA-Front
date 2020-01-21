@@ -20,7 +20,8 @@ import {
   MatMenuModule, MatPaginatorModule, MatRadioModule, MatSelectModule,
   MatSliderModule,
   MatTableModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatDialog, MatTooltipModule
 } from '@angular/material';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {SdaService} from './services/sda.service';
@@ -54,7 +55,8 @@ import {UsersService} from './services/users.service';
     MatTableModule,
     MatPaginatorModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTooltipModule
   ],
   providers: [AnimalsService, SdaService, UsersService],
   bootstrap: [AppComponent]
